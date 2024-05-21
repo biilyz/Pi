@@ -34,7 +34,7 @@ sudo apt update
 sudo apt install git -y
 git clone https://github.com/biilyz/Pi.git
 sudo mkdir /boot/firmware/
-cd PI-Pwn
+cd Pi
 sudo cp -r PPPwn /boot/firmware/
 cd /boot/firmware/PPPwn
 sudo chmod 777 *
