@@ -32,7 +32,7 @@ Place the sd card into the raspberry pi, boot it and connect it to the internet 
 ```sh
 sudo apt update
 sudo apt install git -y
-git clone https://github.com/biilyz/Pi
+git clone https://github.com/biilyz/Pi.git
 sudo mkdir /boot/firmware/
 cd PI-Pwn
 sudo cp -r PPPwn /boot/firmware/
