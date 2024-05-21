@@ -1,0 +1,57 @@
+Install
+
+You need to install Raspberry Pi OS Lite or Armbian Cli / Minimal onto a sd card.
+
+Place the sd card into the raspberry pi, boot it and connect it to the internet then run the following commands
+
+--------------------------------------------------
+sudo apt update
+sudo apt install git -y
+git clone https://github.com/stooged/PI-Pwn
+sudo mkdir /boot/firmware/
+cd PI-Pwn
+sudo cp -r PPPwn /boot/firmware/
+cd /boot/firmware/PPPwn
+sudo chmod 777 *
+sudo bash install.sh
+-----------------------------------------------------
+During the install process you will be asked to set some options.
+
+If you are using a usb to ethernet adapter for the connection to the console you need to select yes
+If your pi has an ethernet port and you are using a usb to ethernet adapter your interface for the usb adapter should be eth1
+If you are using something like a pi zero 2 the interface will be eth0
+If you choose to use the Python of PPPwn it is much slower especially on slower devices like the pi zero.
+
+Once the pi reboots pppwn will run automatically.
+
+On your PS4:
+Go to Settings and then Network
+Select Set Up Internet connection and choose Use a LAN Cable
+Choose Custom setup and choose PPPoE for IP Address Settings
+Enter ppp for PPPoE User ID and PPPoE Password
+NOTE if you enable internet access you must match the username and password entered during the install or use the default ppp
+Choose Automatic for DNS Settings and MTU Settings
+Choose Do Not Use for Proxy Server
+For GoldHen you need to place the goldhen.bin file onto the root of a usb drive and plug it into the console.
+Once goldhen has been loaded for the first time it will be copied to the consoles internal hdd and the usb is no longer required.
+To update goldhen just repeat the above process and the new version will be copied to the internal hdd
+
+FTP / Binload
+If the pi pwn was setup to allow internet access you can use the ftp, klog, and binloader servers on the console
+Your pi must be also connected to your home network via wifi or a second ethernet connection
+To connect to the servers from your pc just connect to the raspberry pi ip on your network and all requests will be forwarded to the console
+
+For ftp make sure you set the transfer mode on your ftp client software to Active not passive.
+
+What it does
+Once everything is setup and the ethernet cable is plugged in between the pi and the console the pi should automatically try and pwn the console.
+The exploit may fail many times but the pi will continue to purge the console to keep trying to pwn itself.
+Once pwned the process will stop and the pi will shut down if you are not using internet access.
+
+You will need to restart the pi if you wish to pwn the console again.
+
+The idea is you boot the console and the pi together and the pi will keep trying to pwn the console without any input from you, just wait on the home screen until the process completes
+
+Updating
+You can edit the exploit scripts by putting the sd card in your computer and going to the PPPwn folder.
+The install.sh script can also be run again to install changes or change the PPPoE user/password
