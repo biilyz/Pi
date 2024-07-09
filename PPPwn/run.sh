@@ -49,8 +49,8 @@ echo -e "\n\n\033[36m _____  _____  _____
 | |__) | |__) | |__) |_      ___ __
 |  ___/|  ___/|  ___/\\ \\ /\\ / / '_ \\
 | |    | |    | |     \\ V  V /| | | |
-|_|    |_|    |_|      \\_/\\_/ |_| |_|\033[0m
-\n\033[33mhttps://github.com/TheOfficialFloW/PPPwn\033[0m\n" | sudo tee /dev/tty1
+|_|    |_|    |_|      \\_/\\_/ |_| |_|.........CUONGLE\033[0m
+\n\033[33mhttps://FACEBOOK.COM/CUONGELE93 Tel:0901779244\033[0m\n" | sudo tee /dev/tty1
 if [ $USBETHERNET = true ] ; then
 	echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
 	coproc read -t 2 && wait "$!" || true
